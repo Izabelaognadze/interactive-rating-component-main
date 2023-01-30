@@ -1,34 +1,192 @@
+:root{
+    --crl-primary-orange: hsl(25, 97%, 53%);
 
-    :root{
-        --crl-primary-orange: hsl(25, 97%, 53%);
+    --crl-neutral-white: hsl(0, 0%, 100%);
+    --crl-neutral-light-grey: hsl(217, 12%, 63%);
+    --crl-neutral-medium-grey: hsl(216, 12%, 54%);
+    --crl-neutral-dark-blue: hsl(213, 19%, 18%);
+    --crl-neutral-dark-blue2: hsl(213, 19%, 40%);/* gasasworebeli varskblavis feri*/
+    --crl-neutral-very-dark-blue: hsl(216, 12%, 8%);
 
-        --crl-neutral-white: hsl(0, 0%, 100%);
-        --crl-neutral-light-grey: hsl(217, 12%, 63%);
-        --crl-neutral-medium-grey: hsl(216, 12%, 54%);
-        --crl-neutral-dark-blue: hsl(213, 19%, 18%);
-        --crl-neutral-very-dark-blue: hsl(216, 12%, 8%);
+    --ff-accent:'Overpass', sans-serif;
 
-        --ff-accent:'Overpass', sans-serif;
+    --fw-700: 700;
+    --fw-400: 400;
+}
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+box-sizing: border-box;
+}
+/*
+2. Remove default margin
+*/
+* {
 
-        --fw-700: 700;
-        --fw-400: 400;
-    }
-    body{
-        background-color: var(--crl-neutral-very-dark-blue);
-        font-family: var(--ff-accent);
-        font-size: 15px;
-    }
-    .product{
-        background-color: var(--crl-neutral-dark-blue);
-    }
-    .button{
-        font-family: inherit;
-    }
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+/*
+3. Allow percentage-based heights in the application
+*/
+html, body {
+height: 100%;
+}
+/*
+Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+body {
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+}
+/*
+6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+/*
+7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+font: inherit;
+}
+/*
+8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+/*
+9. Create a root stacking context
+*/
+#root, #__next {
+isolation: isolate;
+}
 
+body{
+    background-color: var(--crl-neutral-very-dark-blue);
+    font-family: var(--ff-accent);
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 375px;
+    place-content: center;
+    margin: auto;
+}
+.button{
+    font-family: inherit;
+}
+.main__container, .thank-you{
+    background-color: #191e25;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-image: -moz-radial-gradient();
 
-    .attribution { 
-        font-size: 11px; text-align: center; 
-    }
-    .attribution a { 
-        color: hsl(228, 45%, 44%); 
-    }
+}
+.main__container img{
+    background-color: var(--crl-neutral-dark-blue);
+    padding: 0.7rem;
+    border-radius: 50%;
+}
+.main__container h1{
+    color: var(--crl-neutral-white);
+    margin: 1rem 0 1rem;
+    font-family: var(--ff-accent);
+    font-weight: var(--fw-400);
+}
+.main__container p{
+    color: var(--crl-neutral-light-grey);
+
+}
+.main__container ul{
+    display: flex;
+    flex-wrap: Wrap;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    border-radius: 50%;
+    margin-top: 1.5rem;
+}
+.main__container ul li button{
+    width: 3rem;
+    height: 3rem;
+    border:none;
+    border-radius: 50%;
+    background-color: #242d36;
+    color: var(--crl-neutral-white);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.main__container ul li button:hover{
+    color: var(--crl-neutral-white);
+    background-color: var(--crl-primary-orange);
+}
+.main__container ul li button:focus{
+    background-color: var(--crl-neutral-light-grey);
+}
+.button{
+    background-color: var(--crl-primary-orange);
+    color: var(--crl-neutral-white);
+    align-items: center;
+    width: 100%;
+    font-family: var(--ff-accent);
+    font-family: var(--fw-700);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-color: var(--crl-primary-orange);
+    margin-top: 2rem;
+    border-radius: 2rem;
+    height: 3rem;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: var(--fw-700);
+}
+.button:hover{
+    background-color: var(--crl-neutral-white);
+    color: var(--crl-primary-orange);
+    border-color: var(--crl-neutral-white);
+}
+.thank-you{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--crl-neutral-white);
+}
+.thank-you img{
+    display: block;
+    margin: 0 auto 2rem;
+}
+.thank-you p.para{
+    padding: 6px 10px 6px 10px;
+    background-color: var(--crl-neutral-dark-blue);
+    border-radius: 30px;
+    color: var(--crl-primary-orange);
+    margin-bottom: 2rem;
+
+}
+.thank-you p{
+    color: var(--crl-neutral-light-grey);
+}
+.hidden{
+    display: none;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
